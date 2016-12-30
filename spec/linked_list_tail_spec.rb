@@ -156,6 +156,13 @@ describe LinkedListTail do
     expect(@ll.top_back).to eq(2)
   end
 
+  it 'pops front item correctly when "head" == "tail"' do
+    @ll.push_front(3)
+    k = @ll.pop_front
+    expect(k).to eq(3)
+    expect(@ll.head).to eq(@ll.tail)
+  end
+
   it 'searches the list for a key and returns true if found' do
     @ll.push_front(1)
     @ll.push_front(2)
